@@ -6,11 +6,12 @@ const startButton = $('#btn__reset');
 const keys = $('.key');
 
 const game = new Game ();
-const phrase = new Phrase ();
+// const phrase = new Phrase (game.phrases);
 
-game.this.phrases.forEach((phrase, index) => {
-  console.log(`Phrase ${index} - phrase: ${phrase.this.phrase}`)
+game.phrases.forEach((phrase, index) => {
+  console.log(`Phrase ${index} - phrase: ${phrase}`)
 });
+
 // const phrase = new Phrase('Life is like a box of chocolate');
 // console.log(`Phrase - phrase: ${phrase.phrase}`);
 
