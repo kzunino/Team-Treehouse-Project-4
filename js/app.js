@@ -6,9 +6,9 @@ const startButton = $('#btn__reset');
 const keys = $('.key');
 
 const game = new Game ();
-const phrase = new Phrase ();
+//const phrase = new Phrase ();
 
-
+// const randomPhrase = game.getRandomPhrase()
 // game.phrases.forEach((quote, index) => {
 //   console.log(`Phrase ${index} - phrase: ${quote.toLowerCase()}`)
 // });

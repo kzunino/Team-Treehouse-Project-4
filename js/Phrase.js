@@ -7,8 +7,19 @@ class Phrase {
    this.phrase = phrase;
  }
 
-addPhraseToDisplay() {
-  
-}
+ /** * Display phrase on game board
+  */
 
+  addPhraseToDisplay() {
+    const phraseUl = $('#phrase ul');
+    const quote = game.getRandomPhrase();
+    const quoteArray = quote.split('');
+    quoteArray.forEach(letter => {
+      if (letter !== ' ') {
+        phraseUl.append(`<li class ='hide letter ${letter}'>${letter}</li>`);
+      } else {
+        phraseUl.append(`<li class="space"> </li>`);
+      }
+  });
+  }
 }
