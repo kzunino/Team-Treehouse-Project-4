@@ -8,7 +8,7 @@ const keys = $('.key');
 const game = new Game ();
 
 
-//const phrase = new Phrase ();
+const phrase = new Phrase ();
 
 // * testing for generating random quote to page *
 // const randomPhrase = game.getRandomPhrase();
