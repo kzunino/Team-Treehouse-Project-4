@@ -27,12 +27,13 @@ class Phrase {
      const activePhraseArray = game.activePhrase.split('');
      if (activePhraseArray.includes(`${letter}`)) {
          console.log('yay it works');
+         phrase.showMatchedLetter(letter);
       }
     }
 
-  showMatchedLetter() {
-
-
+  showMatchedLetter(letter) {
+    const hiddenLetter = $(`.hide.letter.${letter}`);
+    hiddenLetter.removeClass().addClass(`show letter ${letter}`);
   }
 
 }
