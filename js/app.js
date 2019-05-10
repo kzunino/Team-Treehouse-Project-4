@@ -6,7 +6,15 @@ const startButton = $('#btn__reset');
 const keys = $('.key');
 
 const game = new Game ();
+
+
 //const phrase = new Phrase ();
+
+// * testing for generating random quote to page *
+// const randomPhrase = game.getRandomPhrase();
+// const phrase = new Phrase(randomPhrase.phrase);
+// phrase.addPhraseToDisplay();
+
 
 // const randomPhrase = game.getRandomPhrase()
 // game.phrases.forEach((quote, index) => {
@@ -17,10 +25,11 @@ const game = new Game ();
 // console.log(`Phrase - phrase: ${phrase.phrase}`);
 
 startButton.on('click', function(){
+  game.startGame();
 
 });
 
-keys.on('select', function(){
-
+keys.on('click', function(event){
+  console.log(event.target.html());
 
 });
