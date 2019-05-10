@@ -24,9 +24,13 @@ class Phrase {
   }
 
   checkLetter(letter) {
-
-
+     const activePhraseArray = game.activePhrase.split('');
+     if (activePhraseArray.includes(`${letter}`)) {
+         console.log('yay it works');
+      }
     }
+
+
 
   showMatchedLetter() {
 

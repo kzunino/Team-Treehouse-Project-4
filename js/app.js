@@ -29,7 +29,8 @@ startButton.on('click', function(){
 
 });
 
-keys.on('click', function(event){
-  console.log(event.target.html());
+keys.on('click', function(){
+  const letter = $(this).html();                                 //retrives html from clicked letter
+  phrase.checkLetter(letter);
 
 });
