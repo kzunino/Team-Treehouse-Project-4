@@ -9,7 +9,6 @@ class Game {
    this.activePhrase = this.getRandomPhrase().toLowerCase();
  }
 
-
  /** * Creates phrases for use in game
       * @return {array} An array of phrases that could be used in the game */
 
@@ -18,7 +17,8 @@ createPhrases() {
     'What do we say to the god of death',
     'May the force be with you',
     'Abandon all hope ye who enter',
-    'Make it so'
+    'Make it so',
+    'I am the danger'
   ];
   return newPhrases;
  }
@@ -52,7 +52,7 @@ checkForWin(){
   const lettersHidden = $('.hide');
   if (lettersHidden.length === 0) {
     console.log('winner');
-    game.gameOver(win);
+    game.gameOver();
   }
 }
 
@@ -60,7 +60,7 @@ removeLife(){
   const life = $('ol li');
   life.first().remove()
   if (life.length === 1){
-    game.gameOver(lose);
+    game.gameOver();
   }
 }
 
@@ -68,11 +68,10 @@ gameOver(){
   const overlay = $('#overlay');
   const overlayWin = $('#game-over-message').html('You won!');
   const overlayLose = $('#game-over-message').html('You lost!');
-  if (win){
+  if (){
     overlay.show()
-  }
-  if (lose){
-    overlay.overlayLose.show()
+  }else{
+    overlay.show()
   }
 
 }
