@@ -49,15 +49,24 @@ handleInteractions() {
 
 
 checkForWin(){
-
+  const lettersHidden = $('.hide');
+  if (lettersHidden.length === 0) {
+    //win
+  }
 }
 
 removeLife(){
-
-
+  const life = $('ol li');
+  life.first().remove()
+  if (life.length === 0){
+    game.gameOver();
+  }
 }
 
 gameOver(){
+  const overlay = $('#overlay');
+  const overlayWin = 
+  overlay.show();
 
 }
 
