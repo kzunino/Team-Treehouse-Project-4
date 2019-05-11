@@ -32,6 +32,7 @@ class Phrase {
      const activePhraseArray = game.activePhrase.split('');
      if (activePhraseArray.includes(`${letter}`)) {
          phrase.showMatchedLetter(letter);
+         game.checkForWin();
       } else {
         game.removeLife();
       }

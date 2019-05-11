@@ -51,22 +51,29 @@ handleInteractions() {
 checkForWin(){
   const lettersHidden = $('.hide');
   if (lettersHidden.length === 0) {
-    //win
+    console.log('winner');
+    game.gameOver(win);
   }
 }
 
 removeLife(){
   const life = $('ol li');
   life.first().remove()
-  if (life.length === 0){
-    game.gameOver();
+  if (life.length === 1){
+    game.gameOver(lose);
   }
 }
 
 gameOver(){
   const overlay = $('#overlay');
-  const overlayWin = 
-  overlay.show();
+  const overlayWin = $('#game-over-message').html('You won!');
+  const overlayLose = $('#game-over-message').html('You lost!');
+  if (win){
+    overlay.show()
+  }
+  if (lose){
+    overlay.overlayLose.show()
+  }
 
 }
 
