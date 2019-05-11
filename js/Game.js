@@ -4,7 +4,7 @@
 
 class Game {
  constructor () {
-   this.missed = 0;
+   //this.missed = 0;
    this.phrases = this.createPhrases();
    this.activePhrase = this.getRandomPhrase().toLowerCase();
  }
@@ -35,14 +35,14 @@ getRandomPhrase() {
 * Begins game by selecting a random phrase and displaying it to user
 */
 startGame(){
-  this.missed = 0;
+//  this.missed = 0;
   this.phrases = this.createPhrases();
   this.activePhrase = this.getRandomPhrase().toLowerCase();
   const overlay = $('#overlay');
   const clearPhrase = $('ul');
   const scoreboard = $('ol');
-  const randomPhrase = game.getRandomPhrase();
-  const phrase = new Phrase(this.activePhrase.phrase);
+  // const randomPhrase = this.activePhrase;
+  const phrase = new Phrase(this.activePhrase);
   clearPhrase.empty();
   scoreboard.empty();
   scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
@@ -54,10 +54,10 @@ startGame(){
   phrase.addPhraseToDisplay();
 }
 
-handleInteractions() {
+handleInteractions(letter, key) {
+    phrase.checkLetter(letter, key);
+  }
 
-
-}
 
 /**
 * Checks for winning move
@@ -67,7 +67,6 @@ won
 
 checkForWin(){
   const lettersHidden = $('.hide');
-  const win = 'win';
   if (lettersHidden.length === 0) {
     console.log('winner');
     game.gameOver(true);
@@ -99,12 +98,11 @@ gameOver(outcome){
   const overlay = $('#overlay');
   if (outcome === true){
     const overlayWin = $('#game-over-message').html('You won!');
-    overlay.show()
+    overlay.css('background-color', 'green').show()
   }else{
-    const overlayLose = $('#game-over-message').html('You lost!');
-    overlay.show()
-  }
-
+    const overlayLose = $('#game-over-message').html('Better luck next time!');
+    overlay.css('background-color', 'tomato').show()
+}
  }
 
 

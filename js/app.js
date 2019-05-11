@@ -6,8 +6,6 @@ const startButton = $('#btn__reset');
 const keys = $('.key');
 
 const game = new Game ();
-
-
 const phrase = new Phrase ();
 
 // * testing for generating random quote to page *
@@ -30,7 +28,7 @@ startButton.on('click', function(){
 });
 
 keys.on('click', function(){
-  const letter = $(this).html();                                 //retrives html from clicked letter
-  phrase.checkLetter(letter);
-
+  const letter = $(this).html();                          //retrives html from clicked letter
+  const key = $(this);
+  game.handleInteractions(letter, key);
 });

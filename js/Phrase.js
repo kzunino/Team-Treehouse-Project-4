@@ -12,7 +12,7 @@ class Phrase {
 
   addPhraseToDisplay() {
     const phraseUl = $('#phrase ul');
-    const quote = game.activePhrase;
+    const quote = this.phrase;
     const quoteArray = quote.split('');
     quoteArray.forEach(letter => {
       if (letter !== ' ') {
@@ -28,13 +28,17 @@ class Phrase {
   * @param (string) letter - Letter to check
   */
 
-  checkLetter(letter) {
+  checkLetter(letter, key) {
      const activePhraseArray = game.activePhrase.split('');
      if (activePhraseArray.includes(`${letter}`)) {
          phrase.showMatchedLetter(letter);
+         key.attr('disabled', true);               //disables key if used
+         key.addClass('chosen');
          game.checkForWin();
       } else {
         game.removeLife();
+        key.attr('disabled', true);
+        key.addClass('wrong');
       }
     }
 
