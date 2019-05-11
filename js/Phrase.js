@@ -32,7 +32,7 @@ class Phrase {
      const activePhraseArray = game.activePhrase.split('');
      if (activePhraseArray.includes(`${letter}`)) {
          phrase.showMatchedLetter(letter);
-         key.attr('disabled', true);               //disables key if used
+         key.attr('disabled', true);                           //disables key if used
          key.addClass('chosen');
          game.checkForWin();
       } else {

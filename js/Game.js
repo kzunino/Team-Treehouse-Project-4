@@ -18,7 +18,10 @@ createPhrases() {
     'May the force be with you',
     'Abandon all hope ye who enter',
     'Make it so',
-    'I am the danger'
+    'I am the danger',
+    'alll righty then',
+    'somebody stop me',
+    'get to the chopper',
   ];
   return newPhrases;
  }
@@ -39,17 +42,9 @@ startGame(){
   this.phrases = this.createPhrases();
   this.activePhrase = this.getRandomPhrase().toLowerCase();
   const overlay = $('#overlay');
-  const clearPhrase = $('ul');
-  const scoreboard = $('ol');
   // const randomPhrase = this.activePhrase;
   const phrase = new Phrase(this.activePhrase);
-  clearPhrase.empty();
-  scoreboard.empty();
-  scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
-  scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
-  scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
-  scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
-  scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
+  game.resetGame();
   overlay.hide();
   phrase.addPhraseToDisplay();
 }
@@ -105,5 +100,38 @@ gameOver(outcome){
 }
  }
 
+ /**
+ * resets the keys and phrase
+ */
+
+resetGame(){
+  const clearPhrase = $('ul');
+  //const scoreboard = $('ol');
+  const keys = $('.key');
+  clearPhrase.empty();
+  //scoreboard.empty();
+  keys.prop('disabled', false);
+  keys.removeClass('wrong');
+  keys.removeClass('chosen');
+  game.resetScoreBoard();
+  // scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
+  // scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
+  // scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
+  // scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
+  // scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
+
+}
+
+/**
+* resets the scoreboard
+*/
+
+resetScoreBoard(){
+  const scoreboard = $('ol');
+  scoreboard.empty();
+  for (let i = 0; i < 5; i++){
+    scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
+}
+}
 
 }

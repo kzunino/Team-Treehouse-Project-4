@@ -27,8 +27,14 @@ startButton.on('click', function(){
 
 });
 
-keys.on('click', function(){
+keys.on('click', function(e){
   const letter = $(this).html();                          //retrives html from clicked letter
   const key = $(this);
-  game.handleInteractions(letter, key);
+  game.handleInteractions(letter, key);                   //outputs the key information to relevant methods
+});
+
+keys.on('keypress', function(){
+  const letter = $(this).html();                          //retrives html from clicked letter
+  const key = $(this);
+  game.handleInteractions(letter, key);                   //outputs the key information to relevant methods
 });
