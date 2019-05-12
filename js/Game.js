@@ -63,7 +63,6 @@ won
 checkForWin(){
   const lettersHidden = $('.hide');
   if (lettersHidden.length === 0) {
-    console.log('winner');
     game.gameOver(true);
   }
 }
@@ -126,7 +125,7 @@ resetGame(){
 * resets the scoreboard
 */
 
-resetScoreBoard(){
+resetScoreBoard(){                              //removes all lives and appends five new lives to reset scoreboard
   const scoreboard = $('ol');
   scoreboard.empty();
   for (let i = 0; i < 5; i++){

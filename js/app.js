@@ -8,20 +8,6 @@ const keys = $('.key');
 const game = new Game ();
 const phrase = new Phrase ();
 
-// * testing for generating random quote to page *
-// const randomPhrase = game.getRandomPhrase();
-// const phrase = new Phrase(randomPhrase.phrase);
-// phrase.addPhraseToDisplay();
-
-
-// const randomPhrase = game.getRandomPhrase()
-// game.phrases.forEach((quote, index) => {
-//   console.log(`Phrase ${index} - phrase: ${quote.toLowerCase()}`)
-// });
-
-// const phrase = new Phrase('Life is like a box of chocolate');
-// console.log(`Phrase - phrase: ${phrase.phrase}`);
-
 startButton.on('click', function(){
   game.startGame();
 
@@ -33,8 +19,10 @@ keys.on('click', function(e){
   game.handleInteractions(letter, key);                   //outputs the key information to relevant methods
 });
 
-keys.on('keypress', function(){
-  const letter = $(this).html();                          //retrives html from clicked letter
-  const key = $(this);
-  game.handleInteractions(letter, key);                   //outputs the key information to relevant methods
-});
+$(document).on('keydown', function(event){                            //window event listens for keypresses
+    const letter = String.fromCharCode(event.keyCode).toLowerCase();  //converts keyCode of keypress into letter
+    const key = $(`.key.${letter}`);                                  //changed html classes to include letters to target letter using string interpolation
+    if (event.keyCode >= 65 && event.keyCode <= 90){                  //only executes if letters are pressed
+      game.handleInteractions(letter, key);                           //passes letter and key to handleInteractions method
+    }
+ });
