@@ -13,7 +13,8 @@ class Game {
       * @return {array} An array of phrases that could be used in the game */
 
 createPhrases() {
-   const newPhrases = ['To be or not to be',
+   const newPhrases = [
+    'To be or not to be',
     'What do we say to the god of death',
     'May the force be with you',
     'Abandon all hope ye who enter',
@@ -22,6 +23,10 @@ createPhrases() {
     'alll righty then',
     'somebody stop me',
     'get to the chopper',
+    'foosball is the devil',
+    'show me the money',
+    'ill be back',
+    'do you feel lucky punk',
   ];
   return newPhrases;
  }
@@ -104,10 +109,10 @@ gameOver(outcome){
   const overlay = $('#overlay');
   if (outcome === true){
     const overlayWin = $('#game-over-message').html('You won!');
-    overlay.css('background-color', 'green').show()
+    overlay.css('background-color', 'green').slideDown(1000)
   }else{
     const overlayLose = $('#game-over-message').html('Better luck next time!');
-    overlay.css('background-color', 'tomato').show()
+    overlay.css('background-color', 'tomato').slideDown(1000)
 }
  }
 
