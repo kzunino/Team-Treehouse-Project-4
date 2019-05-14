@@ -46,7 +46,7 @@ startGame(){
   // const randomPhrase = this.activePhrase;
   const phrase = new Phrase(this.activePhrase);
   game.resetGame();
-  overlay.hide();
+  overlay.slideUp(1000);
   phrase.addPhraseToDisplay();
 }
 
