@@ -4,7 +4,7 @@
 
 class Game {
  constructor () {
-   //this.missed = 0;
+   this.missed = 0;
    this.phrases = this.createPhrases();
    this.activePhrase = this.getRandomPhrase().toLowerCase();
  }
@@ -38,10 +38,11 @@ getRandomPhrase() {
 * Begins game by selecting a random phrase and displaying it to user
 */
 startGame(){
-//  this.missed = 0;
+  this.missed = 0;
   this.phrases = this.createPhrases();
   this.activePhrase = this.getRandomPhrase().toLowerCase();
-  const overlay = $('#overlay');
+  keysPressed = []
+  // const = overlay = $('#overlay');
   // const randomPhrase = this.activePhrase;
   const phrase = new Phrase(this.activePhrase);
   game.resetGame();
@@ -50,7 +51,17 @@ startGame(){
 }
 
 handleInteractions(letter, key) {
-    phrase.checkLetter(letter, key);
+    let keyIsInPhrase = phrase.checkLetter(letter, key);
+    if (keyIsInPhrase === true){
+      phrase.showMatchedLetter(letter);
+      key.attr('disabled', true);                           //disables key if used
+      key.addClass('chosen');
+      game.checkForWin();
+    } else {
+      game.removeLife();
+      key.attr('disabled', true);
+      key.addClass('wrong');
+    }
   }
 
 
@@ -77,8 +88,9 @@ removeLife(){
   const life = $('ol .tries');
   const ol = $('ol')
   life.first().remove()
+  this.missed += 1;
   ol.prepend('<li><img src="images/lostHeart.png" alt="Heart Icon" height="35" width="30"></li>');
-  if (life.length === 1){
+  if (this.missed === 5){
     game.gameOver();
   }
 }

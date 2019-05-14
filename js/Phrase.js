@@ -31,15 +31,17 @@ class Phrase {
   checkLetter(letter, key) {
      const activePhraseArray = game.activePhrase.split('');
      if (activePhraseArray.includes(`${letter}`)) {
-         phrase.showMatchedLetter(letter);
-         key.attr('disabled', true);                           //disables key if used
-         key.addClass('chosen');
-         game.checkForWin();
+        return true;
+         // phrase.showMatchedLetter(letter);
+         // key.attr('disabled', true);                           //disables key if used
+         // key.addClass('chosen');
+         // game.checkForWin();
       } else {
-        game.removeLife();
-        key.attr('disabled', true);
-        key.addClass('wrong');
-      }
+        return false;
+      //   game.removeLife();
+      //   key.attr('disabled', true);
+      //   key.addClass('wrong');
+       }
     }
 
     /**
