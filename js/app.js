@@ -2,6 +2,8 @@
  * Project 4 - OOP Game App
  * app.js */
 
+/** * Global Variables: * **/ 
+
 const startButton = $('#btn__reset');
 const keys = $('.key');
 const overlay = $('#overlay');
@@ -11,7 +13,7 @@ let keysPressed = [];
 const game = new Game ();
 const phrase = new Phrase ();
 
-startButton.on('click', function(){
+startButton.on('click', function(){                       //starts game on click
   game.startGame();
 });
 

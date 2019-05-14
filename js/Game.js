@@ -17,10 +17,10 @@ createPhrases() {
     'To be or not to be',
     'What do we say to the god of death',
     'May the force be with you',
-    'Abandon all hope ye who enter',
+    'we have a hulk',
     'Make it so',
     'I am the danger',
-    'alll righty then',
+    'allrighty then',
     'somebody stop me',
     'get to the chopper',
     'foosball is the devil',
@@ -106,7 +106,7 @@ removeLife(){
 */
 
 gameOver(outcome){
-  const overlay = $('#overlay');
+  //const overlay = $('#overlay');
   if (outcome === true){
     const overlayWin = $('#game-over-message').html('You won!');
     overlay.css('background-color', 'green').slideDown(1000)
@@ -124,7 +124,7 @@ resetGame(){
   const clearPhrase = $('ul');
   //const scoreboard = $('ol');
   const keys = $('.key');
-  clearPhrase.empty();
+  clearPhrase.empty();                            //clears all ul items
   //scoreboard.empty();
   keys.prop('disabled', false);
   keys.removeClass('wrong');

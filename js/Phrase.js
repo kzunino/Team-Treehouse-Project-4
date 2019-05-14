@@ -12,8 +12,8 @@ class Phrase {
 
   addPhraseToDisplay() {
     const phraseUl = $('#phrase ul');
-    const quote = this.phrase;
-    const quoteArray = quote.split('');
+    //const quote = this.phrase;
+    const quoteArray = this.phrase.split('');
     quoteArray.forEach(letter => {
       if (letter !== ' ') {
         phraseUl.append(`<li class ="hide letter ${letter}">${letter}</li>`);
