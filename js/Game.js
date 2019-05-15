@@ -15,7 +15,7 @@ class Game {
 createPhrases() {
    const newPhrases = [
     'To be or not to be',
-    'What do we say to the god of death',
+    'go ahead make my day',
     'May the force be with you',
     'we have a hulk',
     'Make it so',
@@ -27,6 +27,7 @@ createPhrases() {
     'show me the money',
     'ill be back',
     'do you feel lucky punk',
+    'there is no place like home',
   ];
   return newPhrases;
  }
@@ -51,7 +52,7 @@ startGame(){
   // const randomPhrase = this.activePhrase;
   const phrase = new Phrase(this.activePhrase);
   game.resetGame();
-  overlay.slideUp(1000);
+  overlay.fadeOut(1000);
   phrase.addPhraseToDisplay();
 }
 
@@ -109,10 +110,10 @@ gameOver(outcome){
   //const overlay = $('#overlay');
   if (outcome === true){
     const overlayWin = $('#game-over-message').html('You won!');
-    overlay.css('background-color', 'green').slideDown(1000)
+    overlay.css('background-color', '#024e08').slideDown(1000)
   }else{
     const overlayLose = $('#game-over-message').html('Better luck next time!');
-    overlay.css('background-color', 'tomato').slideDown(1000)
+    overlay.css('background-color', '#4E0802').slideDown(1000)
 }
  }
 

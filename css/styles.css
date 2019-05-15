@@ -10,7 +10,7 @@
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
-  --color-keys-light: #E5E5E5;
+  --color-keys-light: #cccbcb;
   --font-size-large: 60px;
   --font-size-medium: 20px;
   --transition: all .2s ease-in-out;
@@ -25,6 +25,7 @@
 
 body {
   background-image: url('../images/jungleBackground.jpg');            //double dots tell file to jump out of css file to root directory in order to access img file
+  background-repeat:no-repeat;
   background-size: cover;
   justify-content: space-evenly;
   flex-direction: column;
@@ -42,10 +43,18 @@ h2 {
   text-transform: uppercase;
   font-size: var(--font-size-large);
   margin: 0;
+
 }
 
 h1 {
   font-size: 30px;
+}
+
+h3 {
+  font-size: 18px;
+  color: #490f47;
+  text-shadow: 1px 1px lightgray;
+
 }
 
 button {
@@ -114,7 +123,7 @@ button {
 
 .show {
   color: #fff;
-  background-color: #613120;
+  background-color: #490f47;
   font-size: 20px;
   height: 65px;
   width: 65px;
