@@ -47,17 +47,15 @@ startGame(){
   this.missed = 0;
   this.phrases = this.createPhrases();
   this.activePhrase = this.getRandomPhrase().toLowerCase();
-  keysPressed = []
-  // const = overlay = $('#overlay');
-  // const randomPhrase = this.activePhrase;
+  keysPressed = [];
   const phrase = new Phrase(this.activePhrase);
-  game.resetGame();
+  game.resetGame();                                           //resets gameboard
   overlay.fadeOut(1000);
   phrase.addPhraseToDisplay();
 }
 
 handleInteractions(letter, key) {
-    let keyIsInPhrase = phrase.checkLetter(letter, key);
+    let keyIsInPhrase = phrase.checkLetter(letter);
     if (keyIsInPhrase === true){
       phrase.showMatchedLetter(letter);
       key.attr('disabled', true);                           //disables key if used
@@ -69,7 +67,6 @@ handleInteractions(letter, key) {
       key.addClass('wrong');
     }
   }
-
 
 /**
 * Checks for winning move
@@ -123,20 +120,12 @@ gameOver(outcome){
 
 resetGame(){
   const clearPhrase = $('ul');
-  //const scoreboard = $('ol');
   const keys = $('.key');
   clearPhrase.empty();                            //clears all ul items
-  //scoreboard.empty();
   keys.prop('disabled', false);
   keys.removeClass('wrong');
   keys.removeClass('chosen');
   game.resetScoreBoard();
-  // scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
-  // scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
-  // scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
-  // scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
-  // scoreboard.append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>')
-
 }
 
 /**

@@ -12,7 +12,6 @@ class Phrase {
 
   addPhraseToDisplay() {
     const phraseUl = $('#phrase ul');
-    //const quote = this.phrase;
     const quoteArray = this.phrase.split('');
     quoteArray.forEach(letter => {
       if (letter !== ' ') {
@@ -28,19 +27,12 @@ class Phrase {
   * @param (string) letter - Letter to check
   */
 
-  checkLetter(letter, key) {
+  checkLetter(letter) {
      const activePhraseArray = game.activePhrase.split('');
      if (activePhraseArray.includes(`${letter}`)) {
         return true;
-         // phrase.showMatchedLetter(letter);
-         // key.attr('disabled', true);                           //disables key if used
-         // key.addClass('chosen');
-         // game.checkForWin();
       } else {
         return false;
-      //   game.removeLife();
-      //   key.attr('disabled', true);
-      //   key.addClass('wrong');
        }
     }
 
