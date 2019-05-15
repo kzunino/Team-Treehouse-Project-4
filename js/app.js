@@ -2,7 +2,7 @@
  * Project 4 - OOP Game App
  * app.js */
 
-/** * Global Variables: * **/ 
+/** * Global Variables: * **/
 
 const startButton = $('#btn__reset');
 const keys = $('.key');

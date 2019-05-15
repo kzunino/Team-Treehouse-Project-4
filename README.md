@@ -14,13 +14,16 @@ body {
 
 added styling to image to fit screen:
 
+*Phrase tiles*
+
+Turn purple to better contrast against jungle game board
 
 *Changed colors of keys when selectors .chosen or .wrong are activated*
 
 .wrong font is now dark red
 .chosen font is dark green
 
-*Keyboard tiles and phrase tiles*
+*Keyboard tiles and Phrase tiles*
 
 darker gray for better contrast against the game board.
 
