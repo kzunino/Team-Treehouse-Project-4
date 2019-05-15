@@ -20,7 +20,7 @@ createPhrases() {
     'we have a hulk',
     'Make it so',
     'I am the danger',
-    'allrighty then',
+    'alrighty then',
     'somebody stop me',
     'get to the chopper',
     'foosball is the devil',
